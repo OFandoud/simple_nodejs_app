@@ -22,5 +22,16 @@ pipeline {
             }
         }
         
+         stage('Stage2') {
+            steps {
+                catchError(buildResult: 'SUCCESS' , stageResult: 'FAILURE'){ 
+                sh ''' 
+                echo omar fandoud
+                   
+                    
+                '''
+                }
+            }
+        }
     }
 }
