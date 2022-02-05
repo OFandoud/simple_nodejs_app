@@ -1,4 +1,5 @@
 
+
 pipeline {
     agent { label 'Slave-machine1' }
 
@@ -12,26 +13,13 @@ pipeline {
         
         stage('Stage 1') {
             steps {
-                catchError(buildResult: 'SUCCESS' , stageResult: 'FAILURE'){ 
                 sh ''' 
                 echo omar fandoud
-                    ls /var
+                    ls
                     
                 '''
-                }
             }
         }
         
-         stage('Stage2') {
-            steps {
-                catchError(buildResult: 'SUCCESS' , stageResult: 'FAILURE'){ 
-                sh ''' 
-                echo omar fandoud
-                   
-                    
-                '''
-                }
-            }
-        }
     }
 }
