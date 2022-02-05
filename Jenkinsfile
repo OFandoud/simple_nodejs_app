@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sh ''' 
                     ls
-                    date
+                    cal
                 '''
             }
         }
