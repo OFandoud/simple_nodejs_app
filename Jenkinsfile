@@ -1,10 +1,8 @@
 pipeline {
-    agent  { label 'Slave-machine1' }
+    agent { label 'Slave-machine1' }
 
     stages {
-        
-      
-        
+       
         stage('Stage 1') {
             steps {
                 sh ''' 
@@ -15,5 +13,10 @@ pipeline {
             }
         }
         
+    }
+    post {
+        always{
+        slackSend color: "good", message: "Message from Jenkins Pipeline"
+        }
     }
 }
